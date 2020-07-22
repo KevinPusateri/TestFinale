@@ -19,8 +19,10 @@ public class Spettatore {
 		this.cognome = cognome;
 		this.dataNascita = dataNascita;
 		this.biglietto = biglietto;
+		if(!minorenne()){
+			this.biglietto = biglietto;
+		}	
 	}
-	
 	
 	public boolean minorenne() {
 		int age = getAge();
@@ -30,7 +32,6 @@ public class Spettatore {
 			  if(age > 70) {
 				  biglietto.applicaRiduzioneAnziani();
 			  }
-			  return true;
 		  }else if(age < 5){
 			  biglietto.calcolaRiduzioneBambini();
 		  }
@@ -91,4 +92,12 @@ public class Spettatore {
 		this.biglietto = biglietto;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Spettatore [idSpettatore=" + idSpettatore + ", nome=" + nome + ", cognome=" + cognome + ", dataNascita="
+				+ dataNascita.toLocaleString() + ", biglietto=" + biglietto.getPrezzo() + "]";
+	}
+
+	
 }

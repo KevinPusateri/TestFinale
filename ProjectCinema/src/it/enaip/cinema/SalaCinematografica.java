@@ -42,7 +42,7 @@ public class SalaCinematografica {
 	public float calcolaIncasso() {
 		float totale = 0f;
 		for (Spettatore spettatore : spettatori) {
-			totale = spettatore.getBiglietto().getPrezzo();
+			totale += spettatore.getBiglietto().getPrezzo();
 		}
 		
 		return totale;
