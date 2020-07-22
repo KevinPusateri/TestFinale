@@ -33,7 +33,7 @@ public class DaoCinema implements CinemaDao {
 	public Cinema save() {
 		final int dimensione = 40;
 	      Cinema cinema = new Cinema();
-	      Film film1 = new Film("Bussola d'oro", "Diego", "Marco", "Fantasy", "2:30");
+	      Film film1 = new Film("Bussola d'oro", "Diego", "Marco", "Horror", "2:30");
 	      Film film2 = new Film("Batman", "Marco", "Stefano", "Azione", "2:00");
 	      Film film3 = new Film("Holmes", "Kevin", "Davide", "Giallo", "1:30");
 	      cinema.aggiungiSala(dimensione, film1);
@@ -46,8 +46,10 @@ public class DaoCinema implements CinemaDao {
 	}
 
 	
-	public void addSpettatore(Cinema cinema) throws ParseException{
+	public void addSpettatore(Cinema cinema) throws Exception{
+//		cinema.getSala().get(0).consentiIngresso(new Spettatore(3, "Stefa", "Pusa", dataNascita("2018-01-03") , new Biglietto(34)));
 		cinema.getSala().get(0).getSpettatori().add(new Spettatore(2, "Marco", "Pusa", dataNascita("1999-01-01") , new Biglietto(12)));
+//		cinema.getSala().get(0).consentiIngresso(new Spettatore(3, "Stefa", "Pusa", dataNascita("2018-01-03") , new Biglietto(34)));
 		cinema.getSala().get(0).getSpettatori().add(new Spettatore(3, "Stefa", "Pusa", dataNascita("2018-01-03") , new Biglietto(34)));
 		cinema.getSala().get(1).getSpettatori().add(new Spettatore(4, "Andr", "Pusa", dataNascita("2008-01-03") , new Biglietto(42)));
 		cinema.getSala().get(1).getSpettatori().add(new Spettatore(4, "Mirko", "Pusa", dataNascita("2010-01-03") , new Biglietto(32)));

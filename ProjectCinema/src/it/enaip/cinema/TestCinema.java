@@ -1,10 +1,9 @@
 package it.enaip.cinema;
 
-import java.text.ParseException;
 
 public class TestCinema {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws Exception {
 		
 		
 		Cinema cinema = DaoCinema.getInstance().save();

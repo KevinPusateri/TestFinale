@@ -32,7 +32,7 @@ public class SalaCinematografica {
 		}
 		
 		for (Spettatore spett : spettatori) {
-			if(spett.minorenne() && spett.getAge()<14 
+			if((spett.getAge()<14 )
 					&& "horror".equalsIgnoreCase(film.getGenere())) {
 				throw new Exception("Film Vietato");		
 			}

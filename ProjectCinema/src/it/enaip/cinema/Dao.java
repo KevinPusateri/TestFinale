@@ -10,7 +10,7 @@ public interface Dao<T,ID> {
 	
 	Cinema save();
 	
-	void addSpettatore(Cinema cinema) throws ParseException;
+	void addSpettatore(Cinema cinema) throws ParseException, Exception;
 
 	void getIncasso(Cinema cinema);
 }
